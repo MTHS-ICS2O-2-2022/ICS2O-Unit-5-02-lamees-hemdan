@@ -9,7 +9,8 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"math.random"
+	"math.floor"
 )
 
 func main() {
