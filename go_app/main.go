@@ -9,6 +9,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -27,10 +28,10 @@ func main() {
 
 	if positiveButtonChecked == true {
 		// positive
-		randomNumber = Math.floor(Math.random() * 6)
+		randomNumber = math.floor(math.random() * 6)
 	} else {
 		// negative
-		randomNumber = Math.floor(Math.random() * -6)
+		randomNumber = math.floor(math.random() * -6)
 	}
 
 	fmt.Println("The random number is: ", randomNumber)
