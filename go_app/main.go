@@ -9,8 +9,8 @@ package main
 
 import (
 	"fmt"
-	"math.random"
-	"math.floor"
+	"math/rand"
+	"time"
 )
 
 func main() {
@@ -21,20 +21,28 @@ func main() {
 	fmt.Println("1. Positive")
 	fmt.Println("2. Negative")
 
-	var choice int
-	var positiveButtonChecked bool
+	var userChoice string
 	var randomNumber int
+	var positiveNumber = "positive"
+	var negativeNumber = "negative"
+
 	fmt.Print("Enter your choice: ")
-	fmt.Scanln(&choice)
+	fmt.Scanln(&userChoice)
 
-	if positiveButtonChecked == true {
-		// positive
-		randomNumber = math.floor(math.random() * 6)
+	if userChoice == positiveNumber {
+		rand.Seed(time.Now().UnixNano())
+		min := 1
+		max := 6
+		randomNumber = rand.Intn(max-min) + min
+	} else if userChoice == negativeNumber {
+		rand.Seed(time.Now().UnixNano())
+		min := -6
+		max := -1
+		randomNumber = rand.Intn(max-min) + min
 	} else {
-		// negative
-		randomNumber = math.floor(math.random() * -6)
+		fmt.Println("Invalid input.")
 	}
-
+	// output
 	fmt.Println("The random number is: ", randomNumber)
 	fmt.Println("\nDone.")
 }
